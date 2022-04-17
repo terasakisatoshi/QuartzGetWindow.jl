@@ -1,0 +1,45 @@
+version: '3'
+services:
+  jupyter:
+    image: quartzgetwindowjl
+    container_name: quartzgetwindowjl-jupyter
+    volumes:
+      - ./:/workspace/QuartzGetWindow.jl
+    working_dir: /workspace/QuartzGetWindow.jl
+    ports:
+      - "8888:8888"
+    command: jupyter notebook --notebook-dir /workspace/QuartzGetWindow.jl --ip=0.0.0.0 --allow-root
+  lab:
+    image: quartzgetwindowjl
+    container_name: quartzgetwindowjl-lab
+    volumes:
+      - ./:/workspace/QuartzGetWindow.jl
+    working_dir: /workspace/QuartzGetWindow.jl
+    ports:
+      - "8888:8888"
+    command: jupyter lab --notebook-dir /workspace/QuartzGetWindow.jl --ip=0.0.0.0 --allow-root
+  julia:
+    image: quartzgetwindowjl
+    container_name: quartzgetwindowjl-julia
+    volumes:
+      - ./:/workspace/QuartzGetWindow.jl
+    working_dir: /workspace/QuartzGetWindow.jl
+    command: julia --project=/workspace/QuartzGetWindow.jl
+  web:
+    image: quartzgetwindowjl
+    container_name: quartzgetwindowjl-packagedocs
+    volumes:
+      - ./:/workspace/QuartzGetWindow.jl
+    working_dir: /workspace/QuartzGetWindow.jl
+    ports:
+      - "8000:8000"
+    command: make web
+  pluto:
+    image: quartzgetwindowjl
+    container_name: quartzgetwindowjl-pluto
+    volumes:
+      - ./:/workspace/QuartzGetWindow.jl
+    working_dir: /workspace/QuartzGetWindow.jl
+    ports:
+      - "1234:1234"
+    command: julia -e 'import Pluto; Pluto.run(host="0.0.0.0", port=1234)'
