@@ -1,19 +1,18 @@
 using Dates
 
+using Replay
+
 using QuartzGetWindow
 
 function takemov()
     x, y, w, h = getWindowGeometry(getActiveWindow())
     file = "$(Dates.now()).mov"
-
-    p = run(`screencapture -R$(x),$(y),$(w),$(h) -v $(file)`)
+    run(`screencapture -R$(x),$(y),$(w),$(h) -v $(file)`)
 end
 
-using Replay
-
-function dosomething()
+function record()
     instructions = [
-        "println(\"Hello\")",
+        "println(\"Hello QuartzGetWindow!!!\")",
         """
         for i in 1:5
             sleep(0.1)
@@ -26,3 +25,5 @@ function dosomething()
     replay(instructions)
     exit()
 end
+
+record()
