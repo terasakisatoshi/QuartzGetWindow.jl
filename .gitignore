@@ -1,5 +1,6 @@
 *.gif
 *.ipynb
+*.mov
 .DS_Store
 .ipynb_checkpoints
 /Manifest.toml
