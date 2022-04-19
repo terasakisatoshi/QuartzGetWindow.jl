@@ -3,8 +3,8 @@
 # About this repository 
 
 - This repository [QuartzGetWindow.jl](https://github.com/terasakisatoshi/QuartzGetWindow.jl) gives a julia package for obtaining GUI information for macOS users.
-	- For example we can use `getActiveWindow` function to get the name of currently active window. The result should be same as [pygetwindow.getActiveWindow](https://github.com/asweigart/PyGetWindow/blob/c5f3070324609e682d082ed53122a36002a3e293/src/pygetwindow/_pygetwindow_macos.py#L14-L22)
-	- We also provide `getWindowGeometry` function to get window position and size. The result should be same as [pygetwindow.getWindowGeometry](https://github.com/asweigart/PyGetWindow/blob/c5f3070324609e682d082ed53122a36002a3e293/src/pygetwindow/_pygetwindow_macos.py#L44-L50)
+	- For example we can use `getActiveWindow()` function to get the name of currently active window. The result should be same as [pygetwindow.getActiveWindow](https://github.com/asweigart/PyGetWindow/blob/c5f3070324609e682d082ed53122a36002a3e293/src/pygetwindow/_pygetwindow_macos.py#L14-L22)
+	- We also provide `getWindowGeometry(title)` function to get a window position and size with a given `title`. The result should be same as [pygetwindow.getWindowGeometry](https://github.com/asweigart/PyGetWindow/blob/c5f3070324609e682d082ed53122a36002a3e293/src/pygetwindow/_pygetwindow_macos.py#L44-L50)
 
 - Note that our pacakge [QuartzGetWindow.jl](https://github.com/terasakisatoshi/QuartzGetWindow.jl) uses native libraries on macOS. This approach is similar to [QuartzImageIO.jl](https://github.com/JuliaIO/QuartzImageIO.jl).
 
