@@ -8,6 +8,7 @@ Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 Replay = "dd78c5bf-19c4-4e9c-96ce-c3ec745c7812"
 
 [compat]
+Replay = "0.4"
 julia = "1.6"
 
 [extras]
